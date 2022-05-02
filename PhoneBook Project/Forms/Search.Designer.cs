@@ -264,6 +264,7 @@
             this.Controls.Add(this.InformationGroup);
             this.MaximizeBox = false;
             this.Name = "Search";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Search";
             this.InformationGroup.ResumeLayout(false);

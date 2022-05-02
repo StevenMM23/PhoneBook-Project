@@ -95,5 +95,12 @@ namespace PhoneBook_Project.Forms
 
 
         }
+
+        private void RegisterData_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F5)
+                toolStripButton2_Click(sender,e);
+            
+        }
     }
 }

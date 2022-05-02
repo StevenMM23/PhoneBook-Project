@@ -20,7 +20,13 @@ namespace PhoneBook_Project
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
+            string message = "Are you sure you want to leave?";
+            string title = "Exit";
+            MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
+            DialogResult result = MessageBox.Show(message, title, buttons);
 
+            if(result == DialogResult.OK)
+                Close();
         }
 
         private void toolStripButton2_Click(object sender, EventArgs e)

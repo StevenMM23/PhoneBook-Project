@@ -113,6 +113,7 @@
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::PhoneBook_Project.Properties.Resources.painted_background_multicoloured_palette_23_2148427592;
+            this.ControlBox = false;
             this.Controls.Add(this.toolStrip1);
             this.IsMdiContainer = true;
             this.Name = "Form1";
