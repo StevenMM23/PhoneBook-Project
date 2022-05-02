@@ -35,7 +35,7 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.InformationGroup = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -44,16 +44,16 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.idtxt = new System.Windows.Forms.TextBox();
+            this.Fnametxt = new System.Windows.Forms.TextBox();
+            this.LastNametxt = new System.Windows.Forms.TextBox();
+            this.TelTxt = new System.Windows.Forms.TextBox();
+            this.Celltxt = new System.Windows.Forms.TextBox();
+            this.Emailtxt = new System.Windows.Forms.TextBox();
+            this.Addresstxt = new System.Windows.Forms.TextBox();
+            this.commentxt = new System.Windows.Forms.TextBox();
             this.toolStrip1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.InformationGroup.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -80,15 +80,18 @@
             this.toolStripButton1.Name = "toolStripButton1";
             this.toolStripButton1.Size = new System.Drawing.Size(111, 57);
             this.toolStripButton1.Text = "New Data";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // toolStripButton2
             // 
+            this.toolStripButton2.Enabled = false;
             this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
             this.toolStripButton2.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(141, 57);
-            this.toolStripButton2.Text = "Save Data (F5)";
+            this.toolStripButton2.Size = new System.Drawing.Size(105, 57);
+            this.toolStripButton2.Text = "Save (F5)";
+            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
             // toolStripSeparator1
             // 
@@ -105,30 +108,31 @@
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(6, 60);
             // 
-            // groupBox1
+            // InformationGroup
             // 
-            this.groupBox1.Controls.Add(this.textBox8);
-            this.groupBox1.Controls.Add(this.textBox7);
-            this.groupBox1.Controls.Add(this.textBox6);
-            this.groupBox1.Controls.Add(this.textBox5);
-            this.groupBox1.Controls.Add(this.textBox4);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(27, 74);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(505, 494);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Information";
+            this.InformationGroup.Controls.Add(this.commentxt);
+            this.InformationGroup.Controls.Add(this.Addresstxt);
+            this.InformationGroup.Controls.Add(this.Emailtxt);
+            this.InformationGroup.Controls.Add(this.Celltxt);
+            this.InformationGroup.Controls.Add(this.TelTxt);
+            this.InformationGroup.Controls.Add(this.LastNametxt);
+            this.InformationGroup.Controls.Add(this.Fnametxt);
+            this.InformationGroup.Controls.Add(this.idtxt);
+            this.InformationGroup.Controls.Add(this.label8);
+            this.InformationGroup.Controls.Add(this.label7);
+            this.InformationGroup.Controls.Add(this.label6);
+            this.InformationGroup.Controls.Add(this.label5);
+            this.InformationGroup.Controls.Add(this.label4);
+            this.InformationGroup.Controls.Add(this.label3);
+            this.InformationGroup.Controls.Add(this.label2);
+            this.InformationGroup.Controls.Add(this.label1);
+            this.InformationGroup.Enabled = false;
+            this.InformationGroup.Location = new System.Drawing.Point(27, 73);
+            this.InformationGroup.Name = "InformationGroup";
+            this.InformationGroup.Size = new System.Drawing.Size(505, 494);
+            this.InformationGroup.TabIndex = 1;
+            this.InformationGroup.TabStop = false;
+            this.InformationGroup.Text = "Information";
             // 
             // label1
             // 
@@ -202,70 +206,70 @@
             this.label8.TabIndex = 7;
             this.label8.Text = "Comment:";
             // 
-            // textBox1
+            // idtxt
             // 
-            this.textBox1.Location = new System.Drawing.Point(131, 41);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(293, 22);
-            this.textBox1.TabIndex = 8;
+            this.idtxt.Location = new System.Drawing.Point(131, 41);
+            this.idtxt.Name = "idtxt";
+            this.idtxt.Size = new System.Drawing.Size(293, 22);
+            this.idtxt.TabIndex = 8;
             // 
-            // textBox2
+            // Fnametxt
             // 
-            this.textBox2.Location = new System.Drawing.Point(131, 90);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(293, 22);
-            this.textBox2.TabIndex = 9;
+            this.Fnametxt.Location = new System.Drawing.Point(131, 90);
+            this.Fnametxt.Name = "Fnametxt";
+            this.Fnametxt.Size = new System.Drawing.Size(293, 22);
+            this.Fnametxt.TabIndex = 9;
             // 
-            // textBox3
+            // LastNametxt
             // 
-            this.textBox3.Location = new System.Drawing.Point(131, 139);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(293, 22);
-            this.textBox3.TabIndex = 10;
+            this.LastNametxt.Location = new System.Drawing.Point(131, 139);
+            this.LastNametxt.Name = "LastNametxt";
+            this.LastNametxt.Size = new System.Drawing.Size(293, 22);
+            this.LastNametxt.TabIndex = 10;
             // 
-            // textBox4
+            // TelTxt
             // 
-            this.textBox4.Location = new System.Drawing.Point(131, 188);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(293, 22);
-            this.textBox4.TabIndex = 11;
+            this.TelTxt.Location = new System.Drawing.Point(131, 188);
+            this.TelTxt.Name = "TelTxt";
+            this.TelTxt.Size = new System.Drawing.Size(293, 22);
+            this.TelTxt.TabIndex = 11;
             // 
-            // textBox5
+            // Celltxt
             // 
-            this.textBox5.Location = new System.Drawing.Point(131, 237);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(293, 22);
-            this.textBox5.TabIndex = 12;
+            this.Celltxt.Location = new System.Drawing.Point(131, 237);
+            this.Celltxt.Name = "Celltxt";
+            this.Celltxt.Size = new System.Drawing.Size(293, 22);
+            this.Celltxt.TabIndex = 12;
             // 
-            // textBox6
+            // Emailtxt
             // 
-            this.textBox6.Location = new System.Drawing.Point(131, 286);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(293, 22);
-            this.textBox6.TabIndex = 13;
+            this.Emailtxt.Location = new System.Drawing.Point(131, 286);
+            this.Emailtxt.Name = "Emailtxt";
+            this.Emailtxt.Size = new System.Drawing.Size(293, 22);
+            this.Emailtxt.TabIndex = 13;
             // 
-            // textBox7
+            // Addresstxt
             // 
-            this.textBox7.Location = new System.Drawing.Point(131, 335);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(293, 22);
-            this.textBox7.TabIndex = 14;
+            this.Addresstxt.Location = new System.Drawing.Point(131, 335);
+            this.Addresstxt.Name = "Addresstxt";
+            this.Addresstxt.Size = new System.Drawing.Size(293, 22);
+            this.Addresstxt.TabIndex = 14;
             // 
-            // textBox8
+            // commentxt
             // 
-            this.textBox8.Location = new System.Drawing.Point(131, 384);
-            this.textBox8.Multiline = true;
-            this.textBox8.Name = "textBox8";
-            this.textBox8.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox8.Size = new System.Drawing.Size(348, 70);
-            this.textBox8.TabIndex = 15;
+            this.commentxt.Location = new System.Drawing.Point(131, 384);
+            this.commentxt.Multiline = true;
+            this.commentxt.Name = "commentxt";
+            this.commentxt.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.commentxt.Size = new System.Drawing.Size(348, 70);
+            this.commentxt.TabIndex = 15;
             // 
             // RegisterData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(554, 592);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.InformationGroup);
             this.Controls.Add(this.toolStrip1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -274,8 +278,8 @@
             this.Text = "RegisterData";
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.InformationGroup.ResumeLayout(false);
+            this.InformationGroup.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -288,15 +292,15 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripButton toolStripButton2;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.GroupBox InformationGroup;
+        private System.Windows.Forms.TextBox commentxt;
+        private System.Windows.Forms.TextBox Addresstxt;
+        private System.Windows.Forms.TextBox Emailtxt;
+        private System.Windows.Forms.TextBox Celltxt;
+        private System.Windows.Forms.TextBox TelTxt;
+        private System.Windows.Forms.TextBox LastNametxt;
+        private System.Windows.Forms.TextBox Fnametxt;
+        private System.Windows.Forms.TextBox idtxt;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
