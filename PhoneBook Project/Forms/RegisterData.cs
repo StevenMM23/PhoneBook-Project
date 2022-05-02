@@ -36,35 +36,50 @@ namespace PhoneBook_Project.Forms
             toolStripButton2.Enabled = false;
 
 
+            if (idtxt.Text != String.Empty)
+            {
+                //ID FILE
+                id = path + idtxt.Text + "_id.txt";
+                System.IO.File.WriteAllText(id,idtxt.Text);
 
-            //First Name
-            id = id + path + idtxt.Text + "_fn.txt";
-            System.IO.File.WriteAllText(id, Fnametxt.Text, Encoding.UTF8);
-            id = "";
-            //---------- Last Name ---------------
-            id = id + path + idtxt.Text + "_ln.txt";
-            System.IO.File.WriteAllText(id, LastNametxt.Text, Encoding.UTF8);
-            id = "";
-            //---------- Telephone ---------------
-            id += path + idtxt.Text + "_tel.txt";
-            System.IO.File.WriteAllText(id, TelTxt.Text, Encoding.UTF8);
-            id = "";
-            //---------- CellPhone ---------------
-            id += path + idtxt.Text + "_cell.txt";
-            System.IO.File.WriteAllText(id, Celltxt.Text, Encoding.UTF8);
-            id = "";
-            //---------- Email ---------------
-            id += path + idtxt.Text + "_email.txt";
-            System.IO.File.WriteAllText(id, Emailtxt.Text, Encoding.UTF8);
-            id = "";
-            //---------- Address ---------------
-            id += path + idtxt.Text + "_adress.txt";
-            System.IO.File.WriteAllText(id, Addresstxt.Text, Encoding.UTF8);
-            id = "";
-            //---------- Comment ---------------
-            id += path + idtxt.Text + "_comment.txt";
-            System.IO.File.WriteAllText(id, commentxt.Text, Encoding.UTF8);
-            id = "";
+                //First Name
+                id = path + idtxt.Text + "_fn.txt";
+                System.IO.File.WriteAllText(id, Fnametxt.Text, Encoding.UTF8);
+
+
+                //---------- Last Name ---------------
+                id = path + idtxt.Text + "_ln.txt";
+                System.IO.File.WriteAllText(id, LastNametxt.Text, Encoding.UTF8);
+
+                //---------- Telephone ---------------
+                id = path + idtxt.Text + "_tel.txt";
+                System.IO.File.WriteAllText(id, TelTxt.Text, Encoding.UTF8);
+
+
+                //---------- CellPhone ---------------
+                id = path + idtxt.Text + "_cell.txt";
+                System.IO.File.WriteAllText(id, Celltxt.Text, Encoding.UTF8);
+
+                //---------- Email ---------------
+                id = path + idtxt.Text + "_email.txt";
+                System.IO.File.WriteAllText(id, Emailtxt.Text, Encoding.UTF8);
+
+
+                //---------- Address ---------------
+                id = path + idtxt.Text + "_adress.txt";
+                System.IO.File.WriteAllText(id, Addresstxt.Text, Encoding.UTF8);
+
+
+                //---------- Comment ---------------
+                id = path + idtxt.Text + "_comment.txt";
+                System.IO.File.WriteAllText(id, commentxt.Text, Encoding.UTF8);
+            }
+            else
+            {
+                MessageBox.Show("Complete the ID field");
+                toolStripButton1_Click(sender, e);
+                return;
+            }
             //CLEAR TEXTBOX
             idtxt.Text = "";
             TelTxt.Text = "";
@@ -74,6 +89,9 @@ namespace PhoneBook_Project.Forms
             Emailtxt.Text = "";
             Addresstxt.Text = "";
             commentxt.Text = "";
+
+            MessageBox.Show("Saved", "Save Changes", MessageBoxButtons.OK, MessageBoxIcon.None,
+                MessageBoxDefaultButton.Button1);
 
 
         }
